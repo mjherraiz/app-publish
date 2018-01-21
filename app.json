@@ -15,15 +15,22 @@
         "test": "phpunit"
     },
     "env": {
-        "SYMFONY_ENV": {
+        "APP_ENV": {
             "value": "prod",
             "description": "If you want to use the Symfony `dev` environment in the deployed application, you must move the necessary dependencies (like SensioGeneratorBundle) from `require-dev` to `require`. This will introduce security issues because development tools like the WebProfiler reveal sensitive information."
         },
-        "SYMFONY_LOG": "php://stderr",
-        "SYMFONY_SECRET": {
+        "APP_DEBUG": {
+            "value": "0"
+        },
+        "APP_SECRET": {
             "description": "Extra entropy for %kernel.secret%; used for CSRF tokens, cookies and signed URLs.",
             "generator": "secret"
-        }
+        },
+        "MAILER_URL": {
+            "value": "null://localhost",
+            "description": "A DSN-like configuration string for the mail server. See https://symfony.com/doc/current/reference/configuration/swiftmailer.html#url"
+        },
+        "SYMFONY_LOG": "php://stderr"
     },
     "addons": [
         "heroku-postgresql"
